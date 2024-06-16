@@ -52,6 +52,8 @@ const options = {
 
 
   
-app.listen('https://todo-purrsuit-swagger.vercel.app', 
-    // console.log("Running on Port 3000")
+app.listen(4242, 
+    console.log("Running on Port 4242")
 )
+
+module.exports = app;
