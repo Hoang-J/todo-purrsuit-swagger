@@ -51,6 +51,6 @@ const options = {
     swaggerUi.setup(specs)
   );
   
-app.listen(3000, 
-    console.log("Running on Port 3000")
+app.listen('https://todo-purrsuit-swagger.vercel.app', 
+    // console.log("Running on Port 3000")
 )
