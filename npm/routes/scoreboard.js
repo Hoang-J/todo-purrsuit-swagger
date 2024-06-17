@@ -90,7 +90,7 @@
  *      500:
  *        description: Some error happened
  *   delete:
- *     summary: Remove the book by id
+ *     summary: Remove the player and their information by id
  *     tags: [Scoreboard Server]
  *     parameters:
  *       - in: path

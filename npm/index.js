@@ -9,8 +9,6 @@ swaggerUi = require("swagger-ui-express")
 
 swaggerJsdoc = require("swagger-jsdoc")
 
-const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
-
 
 app.get('/', function (req, res) {
   res.send('Swagger Documentation for Todo Purrsuit API')
@@ -48,12 +46,8 @@ const options = {
   app.use(
     "/api-docs",
     swaggerUi.serve,
-    swaggerUi.setup(specs, {
-      customCss:
-        '.swagger-ui .opblock .opblock-summary-path-description-wrapper { align-items: center; display: flex; flex-wrap: wrap; gap: 0 10px; padding: 0 10px; width: 100%; }',
-      customCssUrl: CSS_URL,
-     })
-  );
+    swaggerUi.setup(specs)
+);
 
 
   
@@ -61,4 +55,3 @@ app.listen(4242,
     console.log("Running on Port 4242")
 )
 
-module.exports = app;
