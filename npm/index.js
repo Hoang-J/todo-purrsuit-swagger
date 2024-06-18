@@ -8,7 +8,7 @@ swaggerUi = require("swagger-ui-express")
 
 
 swaggerJsdoc = require("swagger-jsdoc")
-
+const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
 
 app.get('/', function (req, res) {
   res.send('Swagger Documentation for Todo Purrsuit API')
@@ -17,10 +17,10 @@ app.get('/', function (req, res) {
 // Using Swagger's Open Source Specification to set up documentation page (provided by Swagger)
 const options = {
     definition: {
-      openapi: "2.0.0",
+      openapi: "3.0.0",
       info: {
         title: "LogRocket Express API with Swagger",
-        version: "2.0.0",
+        version: "1.0.0",
         description:
           "This is a simple CRUD API application made with Express and documented with Swagger",
         license: {
@@ -46,7 +46,7 @@ const options = {
   app.use(
     "/api-docs",
     swaggerUi.serve,
-    swaggerUi.setup(specs)
+    swaggerUi.setup(specs, { customCssUrl: CSS_URL })
 );
 
 
