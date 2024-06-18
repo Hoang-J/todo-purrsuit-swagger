@@ -39,7 +39,7 @@ const options = {
         },
       ],
     },
-    apis: ["todo-purrsuit-swagger/npm/src/routes/*.js"],
+    apis: ["npm/src/routes/*.js"],
   };
   
   const specs = swaggerJsdoc(options);
