@@ -6,6 +6,8 @@
 // Has a section that gives examples of different status codes
 /**
  * @swagger
+ * paths:
+ *  /auth/login
  * tags:
  *   name: Login 
  *   description: Users can get a list of all the accounts currently on the database as well as create a new account
