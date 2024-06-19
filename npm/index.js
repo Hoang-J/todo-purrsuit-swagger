@@ -19,18 +19,13 @@ const options = {
     definition: {
       openapi: "3.0.0",
       info: {
-        title: "LogRocket Express API with Swagger",
+        title: "Todo Purrsuit API Documentation",
         version: "1.0.0",
         description:
-          "This is a simple CRUD API application made with Express and documented with Swagger",
+          "This website created with Swagger, provides documentation for the Todo Purrsuit API we created.",
         license: {
-          name: "MIT",
+          name: "License: MIT",
           url: "https://spdx.org/licenses/MIT.html",
-        },
-        contact: {
-          name: "LogRocket",
-          url: "https://logrocket.com",
-          email: "info@email.com",
         },
       },
       servers: [

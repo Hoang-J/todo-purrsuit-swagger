@@ -28,7 +28,7 @@
  *        description: Password associated with the account
  *     responses:
  *       200:
- *         description: Displays a list of current accounts stored in a database. If query params are included, a response will be sent back to the user.
+ *         description: Displays a list of current accounts stored in a database. If query params are included, a response will be sent back to the user
  *         content:
  *           application/json: 
  *             schema: 
@@ -76,7 +76,7 @@
  *                  type: string
  *     responses:
  *       200:
- *         description: User was successfully registered OR account already exists.
+ *         description: User was successfully registered OR account already exists
  *       400:
  *         description: Query not permitted at this endpoint
 */

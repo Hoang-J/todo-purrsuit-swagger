@@ -36,7 +36,7 @@
  * 
  *     responses:
  *       200:
- *         description: A list of the different usernames along with their playerids, and scores will be displayed OR specific information will be shown base on a specific query request.
+ *         description: A list of the different usernames along with their playerids, and scores will be displayed OR specific information will be shown base on a specific query request
  *         content:
  *           application/json:
  *             schema:
@@ -50,26 +50,31 @@
  *                    type: string
  *                  score:
  *                    type: integer
+ *       400:
+ *         description: Request body is not permitted at this endpoint OR Query parameters do not meet requirements OR Query Parameter is NaN
 
+ * 
  *   post:
  *     summary: Create a new entry on the leaderboard for a new player and/or score
  *     tags: [Scoreboard Server]
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/Book'
+ *        application/json: 
+ *         schema: 
+ *           type: object
+ *           properties:
+ *              username:
+ *                  type: string
+ *              score:
+ *                  type: integer
  *     responses:
  *       200:
- *         description: The name of the new player and their current score in the game
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Book'
- *       500:
- *         description: Some server error
- * /score/:username:
+ *         description: Player was successfully added
+ *       400:
+ *         description: Invalid body parameters
+
+ * /score/{username}:
  *   patch:
  *    summary: Update the player's score
  *    tags: [Scoreboard Server]
@@ -83,35 +88,44 @@
  *    requestBody:
  *      required: true
  *      content:
- *        application/json:
- *          schema:
- *            $ref: '#/components/schemas/Book'
+ *        application/json: 
+ *         schema: 
+ *           type: object
+ *           properties:
+ *              username:
+ *                  type: string
+ *              score:
+ *                  type: integer
  *    responses:
  *      200:
- *        description: The book was updated
+ *        description: The player's username AND/OR score was updated
  *        content:
- *          application/json:
- *            schema:
- *              $ref: '#/components/schemas/Book'
+ *        application/json: 
+ *         schema: 
+ *           type: object
+ *           properties:
+ *              username:
+ *                  type: string
+ *              score:
+ *                  type: integer
  *      404:
- *        description: The book was not found
- *      500:
- *        description: Some error happened
+ *        description: Invalid body parameters
+
  *   delete:
- *     summary: Remove the player and their information by id
+ *     summary: Remove the player and their score by username
  *     tags: [Scoreboard Server]
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: username
  *         schema:
  *           type: string
  *         required: true
- *         description: The book id
+ *         description: The player's registered username
  *
  *     responses:
  *       200:
- *         description: The book was deleted
- *       404:
- *         description: The book was not found
+ *         description: The player's score was deleted
+ *       400:
+ *         description: The player's score was not found
  */
 
